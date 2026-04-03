@@ -11,7 +11,8 @@ window=Tk()
 card_front_img=PhotoImage(file="images/card_front.png") #needs Tk() to be created before using PhotoImage
 card_back_img=PhotoImage(file="images/card_back.png")
 
-global current_card, flip_timer
+current_card=[]
+flip_timer=None
 
 #--------FUNCTIONS -----------#
 def nextCard():
@@ -24,10 +25,15 @@ def nextCard():
     flip_timer = window.after(3000, func=flipCard)
 
 def flipCard():
-    pass
+    canvas.itemconfig(card_title, text="English", fill="white")
+    canvas.itemconfig(card_word, text=current_card["English"], fill="white")
+    canvas.itemconfig(canvas_image, image=card_back_img)
 
 def is_known():
-    pass
+    to_learn.remove(current_card)
+    df = pd.DataFrame(to_learn)
+    df.to_csv("data/words_to_learn.csv", index=False)
+    nextCard()
 #------------DATA SETUP-----------#
 try:
     data_frame=pd.read_csv("data/words_to_learn.csv")
