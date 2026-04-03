@@ -1,4 +1,5 @@
 from tkinter import *
+import pandas as pd
 
 BACKGROUND_COLOR = "#B1DDC6"
 TITLE_FONT=("Ariel", 40, "italic")
@@ -8,6 +9,17 @@ window=Tk()
 
 card_front_img=PhotoImage(file="images/card_front.png") #needs Tk() to be created before using PhotoImage
 card_back_img=PhotoImage(file="images/card_back.png")
+
+#------------DATA SETUP-----------#
+try:
+    data_frame=pd.read_csv("data/words_to_learn.csv")
+    if data_frame.empty():
+        data_frame=pd.read_csv("data/words_to_learn.csv")
+except (FileNotFoundError, pd.errors.EmptyDataError):
+    data_frame=pd.read_csv("data/japanese_words.csv")
+
+data=data_frame.to_dict(orient="records")
+to_learn=data.copy()
 
 #---------UI SETUP ---------------#
 #window=Tk() -> at the top because it creates the main window to use PhotoImage and other widgets. It should be before any widget creation.
