@@ -1,5 +1,6 @@
 from tkinter import *
 import pandas as pd
+import random
 
 BACKGROUND_COLOR = "#B1DDC6"
 TITLE_FONT=("Ariel", 40, "italic")
@@ -10,6 +11,23 @@ window=Tk()
 card_front_img=PhotoImage(file="images/card_front.png") #needs Tk() to be created before using PhotoImage
 card_back_img=PhotoImage(file="images/card_back.png")
 
+global current_card, flip_timer
+
+#--------FUNCTIONS -----------#
+def nextCard():
+    if flip_timer is not None:
+        window.after_cancel(flip_timer)
+    current_card=random.choice(to_learn)
+    canvas.itemconfig(canvas_image, image=card_front_img)
+    canvas.itemconfig(card_title, text="Japanese", fill="black")
+    canvas.itemconfig(card_word, text=current_card["Japanese"], fill="black")
+    flip_timer = window.after(3000, func=flipCard)
+
+def flipCard():
+    pass
+
+def is_known():
+    pass
 #------------DATA SETUP-----------#
 try:
     data_frame=pd.read_csv("data/words_to_learn.csv")
@@ -38,12 +56,14 @@ canvas.grid(row=0,column=0,columnspan=2)
 
 #known button
 check_image=PhotoImage(file="images/right.png")
-known_button=Button(image=check_image,highlightthickness=0)
+known_button=Button(image=check_image,highlightthickness=0,command=nextCard)
 known_button.grid(row=1, column=0)
 
 #unknown button
 wrong_image=PhotoImage(file="images/wrong.png")
-known_button=Button(image=wrong_image,highlightthickness=0)
+known_button=Button(image=wrong_image,highlightthickness=0,command=is_known)
 known_button.grid(row=1, column=1)
+
+nextCard()
 
 window.mainloop()
