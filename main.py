@@ -16,6 +16,7 @@ flip_timer=None
 
 #--------FUNCTIONS -----------#
 def nextCard():
+    global flip_timer, current_card
     if flip_timer is not None:
         window.after_cancel(flip_timer)
     current_card=random.choice(to_learn)
@@ -25,6 +26,7 @@ def nextCard():
     flip_timer = window.after(3000, func=flipCard)
 
 def flipCard():
+    global current_card
     canvas.itemconfig(card_title, text="English", fill="white")
     canvas.itemconfig(card_word, text=current_card["English"], fill="white")
     canvas.itemconfig(canvas_image, image=card_back_img)
@@ -37,7 +39,7 @@ def is_known():
 #------------DATA SETUP-----------#
 try:
     data_frame=pd.read_csv("data/words_to_learn.csv")
-    if data_frame.empty():
+    if data_frame.empty:
         data_frame=pd.read_csv("data/words_to_learn.csv")
 except (FileNotFoundError, pd.errors.EmptyDataError):
     data_frame=pd.read_csv("data/japanese_words.csv")

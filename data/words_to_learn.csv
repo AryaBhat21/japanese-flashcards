@@ -67,7 +67,6 @@ Japanese,English
 は,ha
 ひ,hi
 ふ,fu
-へ,he
 ほ,ho
 ま,ma
 み,mi
@@ -81,7 +80,6 @@ Japanese,English
 る,ru
 れ,re
 ろ,ro
-わ,wa
 を,wo
 ん,n
 ア,a
@@ -100,7 +98,6 @@ Japanese,English
 タ,ta
 チ,chi
 ツ,tsu
-テ,te
 ト,to
 ナ,na
 ニ,ni
@@ -111,11 +108,9 @@ Japanese,English
 ヒ,hi
 フ,fu
 ヘ,he
-ホ,ho
 マ,ma
 ミ,mi
 ム,mu
-メ,me
 モ,mo
 ヤ,ya
 ユ,yu
@@ -128,7 +123,6 @@ Japanese,English
 ワ,wa
 ヲ,wo
 ン,n
-一,one
 二,two
 三,three
 四,four
