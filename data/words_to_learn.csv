@@ -1,7 +1,6 @@
 Japanese,English
 こんにちは,Hello
 ありがとう,thank you
-すみません,sorry
 はい,yes
 いいえ,no
 おねがいします,Please.
@@ -9,7 +8,6 @@ Japanese,English
 どこ,where
 いつ,when
 なに,what
-かわいい,cute
 おいしい,delicious
 たべる,eat
 のむ,drink
@@ -19,16 +17,13 @@ Japanese,English
 くる,Coming
 きく,listen
 よむ,read
-おきる,wake up
 ねる,sleep
-あそぶ,play
 テレビ,tv set
 パソコン,PC
 スマホ,smartphone
 トイレ,toilet
 コーヒー,coffee
 メニュー,menu
-カメラ,camera
 ホテル,Hotel
 レストラン,restaurant
 ノート,Notebook
@@ -62,7 +57,6 @@ Japanese,English
 な,na
 に,ni
 ぬ,nu
-ね,ne
 の,no
 は,ha
 ひ,hi
@@ -87,38 +81,30 @@ Japanese,English
 エ,e
 オ,o
 キ,ki
-ク,ku
 ケ,ke
 コ,ko
 サ,sa
 シ,shi
 ス,su
-セ,se
 ソ,so
 タ,ta
 チ,chi
-ツ,tsu
 ト,to
 ナ,na
 ニ,ni
-ヌ,nu
 ネ,ne
 ノ,no
 ハ,ha
-ヒ,hi
 フ,fu
-ヘ,he
 マ,ma
 ミ,mi
 ム,mu
-モ,mo
 ヤ,ya
 ユ,yu
 ヨ,yo
 ラ,ra
 リ,ri
 ル,ru
-レ,re
 ロ,ro
 ワ,wa
 ヲ,wo
@@ -137,7 +123,6 @@ Japanese,English
 火,fire
 水,water
 木,tree/wood
-金,gold/money
 土,soil/earth
 人,person
 山,mountain
